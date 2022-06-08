@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12">
+        <div class="bg">
+          <p id="title1">Nhiệt độ</p>
+          <p class="lr">
+            {% if tem %}
+                {{ tem }}&degC
+            {% else %}
+                Chưa có dữ liệu nhiệt độ
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <div class="bg">
+          <p class="title2">Độ ẩm</p>
+          <p class="lr">
+            {% if humi %}
+                {{ humi }}%
+            {% else %}
+                Chưa có dữ liệu độ ẩm
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <div class="bg">
+          <p class="title3">Trạng thái</p>
+          <p class="lr">
+            {% if status %}
+                {{ status }}
+            {% else %}
+                Lên là lên
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+        
+{% endblock %}
