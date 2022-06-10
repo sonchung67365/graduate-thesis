@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIO
+import RPiSim.GPIO as GPIO
 import time
 
 class Motor():

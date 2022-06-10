@@ -78,8 +78,6 @@ def control_motor():
     speed = request.form['speed']
     # Print value
     print(int(speed))
-    motor.move(speed=int(speed), t=0)
-
 
     # Get direction value
     dir = request.form['dir']
@@ -91,29 +89,45 @@ def control_motor():
 @app.route('/stop-motor')
 def stop_motor():
     print("Stop Motor")
-    motor.stop()
+    
     return render_template('user.html')
 
-@app.route('/<changepin>', methods=['POST'])
-def reroute(changepin):
-    changePin = int(changepin) #cast changepin to an int
-    if changePin == 1:
-        print ("Left")
-        
-    elif changePin == 2:
-        print ("Forward")
-        
-    elif changePin == 3:
-        print ("Right")
-        
-    elif changePin == 4:
-        print ("Reverse")
-        
-    else:
-        pass
-    response = make_response(redirect(url_for('index')))
-    return(response)
+@app.route('/1')
+def forward():
+    print("Forward")
+    motor.move()
+    return render_template('home.html')
+
+
+@app.route('/2')
+def reverse():
+    print("Reverse")
+    motor.move(-50)
+    return render_template('home.html')
+
+
+@app.route('/3')
+def left():
+    print("Left")
+    motor.move(100,50)
+    return render_template('home.html')
+
+
+@app.route('/4')
+def right():
+    print("Right")
+    motor.move(100,-50)
+    return render_template('home.html')
+
+
+@app.route('/5')
+def stop():
+    print("Stop")
+    motor.stop()
+    return render_template('home.html')
+
+
 
 # Run the app on the local development server
 if __name__ == '__main__':
-    app.run(host="192.168.1.170", port="2000" ,debug=True)
+    app.run(host="0.0.0.0", port="2000" ,debug=True)
