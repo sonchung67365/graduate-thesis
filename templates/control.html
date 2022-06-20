@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Control Page{% endblock %}
+
+{% block content %}
+
+<!-- control section start -->
+
+<section class="control" id="control">
+
+    <h1 class="heading">điều khiển <span>Bằng tay</span></h1>
+
+    <div class="box-container">
+
+        <div class="row">
+            <a href="/up">
+                <img src="static/up.png" alt="">
+            </a>
+        </div>
+
+        <div class="row">
+            <a href="/turn-left">
+                <img src="static/turn_left.png" alt="">
+            </a>
+            <a href="/stop">
+                <img src="static/stop.png" alt="">
+            </a>
+            <a href="/turn-right">
+                <img src="static/turn_right.png" alt="">
+            </a>
+        </div>
+
+        <div class="row">
+            <a href="/back">
+                <img src="static/back.png" alt="">
+            </a>  
+        </div>
+        
+
+    </div>
+
+</section>
+
+<!-- control section end -->
+
+{% endblock %}

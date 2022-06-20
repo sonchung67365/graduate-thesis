@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    src: url(Nunito/Nunito-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    padding-left: 35rem;
+    background: #eee;
+}
+
+header {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    width: 35rem; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    background: #ddd;
+}
+
+header .home img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 25%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+header .home .project {
+    font-size: 4rem;
+
+}
+
+header .home .post {
+    font-size: 3rem;
+
+}
+
+header nav {
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 1rem 2rem;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background: #ccc;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+section {
+    height: 100vh;
+}
+
+.heading {
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 5rem;
+    padding: 1rem;
+    border-bottom: .1rem solid #ddd;
+}
+
+.heading span {
+    color: #d03434;
+}
+
+.sensor .box-container {
+    flex: 1 1 48rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sensor .box-container .box {
+    width: 25rem;
+    height: 25rem;
+    background: #999;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.sensor .box-container .box span {
+    font-size: 6rem;
+    color: #f9ca24;
+}
+
+.sensor .box-container .box h3 {
+    font-size: 4rem;
+    
+}
+
+.control .box-container {
+    height: 100%;
+}
+
+.control .box-container .row {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.control .box-container .row img {
+    height: 10rem;
+    width: 10rem;
+    line-height: 10rem;
+    border-radius: 1.5rem;
+    margin: 2rem;
+    padding: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 5rem;
+    background: #ccc;
+}
+
+.menu {
+    position: fixed;
+    top: 2rem; 
+    right: 2rem;
+    background: #ddd;
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem;
+    z-index: 1000;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media (max-width:1200px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .home {
+        padding: 1rem 4rem;
+    }
+
+}
+
+@media (max-width:992px) {
+
+    header {
+        left: -120%;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    header.toggle {
+        left: 0%;
+    }
+
+    body {
+        padding: 0;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    html {
+        font-size: 50%;
+    }
+
+}
+
+@media (max-width:576px) {
+
+    header {
+        width: 100vw;
+    }
+
+}

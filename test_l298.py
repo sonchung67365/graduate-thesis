@@ -7,8 +7,8 @@ class Motor():
         self.in2 = in2
         GPIO.setup(self.in1, GPIO.OUT)
         GPIO.setup(self.in2, GPIO.OUT)
-        self.in1_pwm = GPIO.PWM(self.in1, 100)
-        self.in2_pwm = GPIO.PWM(self.in2, 100)
+        self.in1_pwm = GPIO.PWM(self.in1, 10000)
+        self.in2_pwm = GPIO.PWM(self.in2, 10000)
         self.in1_pwm.start(0)
         self.in2_pwm.start(0)
     def moveF(self, speed=50, t=0):
