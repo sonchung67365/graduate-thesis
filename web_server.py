@@ -18,7 +18,7 @@ def index():
 
 @app.route('/sensor')
 def sensor():
-    return render_template('index.html')
+    return render_template('sensor.html')
 
 @app.route('/control')
 def control():
@@ -52,4 +52,4 @@ def stop():
 
 # Run the app on the local development server
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port="8715", debug=True)
+    app.run(host="192.168.33.105", port="6500", debug=True)
