@@ -1,7 +1,13 @@
 import RPiSim.GPIO as GPIO
-import time
+from time import sleep
+
 
 HZ = 5000
+
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
 
 class Motor():
     def __init__(self, in1, in2):
@@ -16,18 +22,18 @@ class Motor():
     def moveF(self, speed=50, t=0):
         self.in1_pwm.ChangeDutyCycle(0)
         self.in2_pwm.ChangeDutyCycle(speed)
-        time.sleep(t)
+        sleep(t)
     def moveB(self, speed=50, t=0):
         self.in1_pwm.ChangeDutyCycle(speed)
         self.in2_pwm.ChangeDutyCycle(0)
-        time.sleep(t)
+        sleep(t)
     def stop(self, t=0):
         self.in1_pwm.ChangeDutyCycle(0)
         self.in2_pwm.ChangeDutyCycle(0)
-        time.sleep(t)
+        sleep(t)
 
 class MotorRobot():
-    def __init__(self, in1, in2, in3, in4):
+    def __init__(self, in1=17, in2=27, in3=22, in4=23):
         self.in1 = in1
         self.in2 = in2
         self.in3 = in3
@@ -69,12 +75,11 @@ class MotorRobot():
         else:
             self.in3.ChangeDutyCycle(abs(leftSpeed))
             self.in4.ChangeDutyCycle(0)
-
-        time.sleep(t)
+        sleep(t)
     
     def stop(self, t=0):
         self.in1.ChangeDutyCycle(0)
         self.in2.ChangeDutyCycle(0)
         self.in3.ChangeDutyCycle(0)
         self.in4.ChangeDutyCycle(0)
-        time.sleep(t)
+        sleep(t)
