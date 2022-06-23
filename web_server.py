@@ -18,7 +18,9 @@ def index():
 
 @app.route('/sensor')
 def sensor():
-    return render_template('sensor.html')
+    temp = "lấy giá trị nhiệt độ" #thay bằng hàm lấy giá trị
+    humi = "lấy giá trị độ ẩm" #thay bằng hàm lấy giá trị
+    return render_template('sensor.html', temp=temp, humi=humi)
 
 @app.route('/control')
 def control():
@@ -27,29 +29,34 @@ def control():
 @app.route('/up')
 def up():
     print("up")
+    # thêm lệnh điều khiển
     return render_template('control.html')
 
 @app.route('/back')
 def back():
     print("back")
+    # thêm lệnh điều khiển
     return render_template('control.html')
 
 @app.route('/turn-left')
 def turn_left():
     print("turn left")
+    # thêm lệnh điều khiển
     return render_template('control.html')
 
 @app.route('/turn-right')
 def turn_right():
     print("turn right")
+    # thêm lệnh điều khiển
     return render_template('control.html')
 
 @app.route('/stop')
 def stop():
     print("stop")
+    # thêm lệnh điều khiển
     return render_template('control.html')
 
 
 # Run the app on the local development server
 if __name__ == '__main__':
-    app.run(host="192.168.33.105", port="6500", debug=True)
+    app.run(host="192.168.33.105", port="7022", debug=True)
