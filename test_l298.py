@@ -1,14 +1,16 @@
 import RPiSim.GPIO as GPIO
 import time
 
+HZ = 5000
+
 class Motor():
     def __init__(self, in1, in2):
         self.in1 = in1
         self.in2 = in2
         GPIO.setup(self.in1, GPIO.OUT)
         GPIO.setup(self.in2, GPIO.OUT)
-        self.in1_pwm = GPIO.PWM(self.in1, 5000)
-        self.in2_pwm = GPIO.PWM(self.in2, 5000)
+        self.in1_pwm = GPIO.PWM(self.in1, HZ)
+        self.in2_pwm = GPIO.PWM(self.in2, HZ)
         self.in1_pwm.start(0)
         self.in2_pwm.start(0)
     def moveF(self, speed=50, t=0):
@@ -36,10 +38,10 @@ class MotorRobot():
         GPIO.setup(self.in3, GPIO.OUT)
         GPIO.setup(self.in4, GPIO.OUT)
 
-        self.in1 = GPIO.PWM(self.in1, 5000)
-        self.in2 = GPIO.PWM(self.in2, 5000)
-        self.in3 = GPIO.PWM(self.in3, 5000)
-        self.in4 = GPIO.PWM(self.in4, 5000)
+        self.in1 = GPIO.PWM(self.in1, HZ)
+        self.in2 = GPIO.PWM(self.in2, HZ)
+        self.in3 = GPIO.PWM(self.in3, HZ)
+        self.in4 = GPIO.PWM(self.in4, HZ)
 
         self.in1.start(0)
         self.in2.start(0)
