@@ -1,161 +1,167 @@
 @font-face {
-    font-family: wght;
-    src: url(Nunito/Nunito-VariableFont_wght.ttf);
+  font-family: wght;
+  src: url(Nunito/Nunito-VariableFont_wght.ttf);
 }
 
 :root {
-  --grey-color: #ddd;
-  --milky-color: #eee;
-  --red-color: #d03434;
-  --yellow-color: #f4ea36;
-  --blue-color: #368df4;
+--grey-color: #ddd;
+--milky-color: #eee;
+--red-color: #d03434;
+--yellow-color: #f4ea36;
+--blue-color: #368df4;
 }
 
 * {
-    font-family: wght;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    text-transform: capitalize;
-    transition: all .2s linear;
-    color: black;
-    flex-wrap: wrap;
+  font-family: wght;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+  color: black;
+  flex-wrap: wrap;
 }
 
 .info .member .box {
-    width: 22%;
-    height: auto;
-    box-sizing: border-box;
-    margin: 1rem;
-    font-size: 1.5rem;
+  width: 22%;
+  height: auto;
+  box-sizing: border-box;
+  margin: 1rem;
+  font-size: 1.5rem;
 }
 
 .info .member {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .sensor .box-container .box {
-    box-sizing: border-box;
-    width: 30rem;
-    height: 20rem;
-    margin: 3rem;
-    font-size: 3rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 5rem;
+  box-sizing: border-box;
+  width: 30rem;
+  height: 20rem;
+  margin: 3rem;
+  font-size: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5rem;
 }
 
+.box.box-distance {background: #65c53a;}
+
+.box.box-pin {background: #3ac5ba;}
+
+.box.box-lamp {background: #c5973a;}
+
 .sensor .box-container .box-humi {
-    background: var(--blue-color);
+  background: var(--blue-color);
 }
 
 .sensor .box-container .box-temp {
-    background: var(--yellow-color);
+  background: var(--yellow-color);
 }
 
 .sensor .box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .control .box-container .row a img {
-    box-sizing: border-box;
-    width: 15rem;
-    height: 15rem;
-    object-fit: contain;
-    background: #ccc;
-    border-radius: 2rem;
-    margin: 0.5rem;
-    padding: 1rem;
+  box-sizing: border-box;
+  width: 15rem;
+  height: 15rem;
+  object-fit: contain;
+  background: #ccc;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  padding: 1rem;
 }
 
 .control .box-container .row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .control .box-container {display: flex;flex-direction: column;justify-content: center;margin-top: 4rem;}
 
 .info .content p {
-    font-size: 1.7rem;
+  font-size: 1.7rem;
 }
 
 section {
-    margin: 2rem;
+  margin: 2rem;
 }
 
 .info .content {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .heading span {
-    color: var(--red-color);
+  color: var(--red-color);
 }
 
 .heading {
-    text-align: center;
-    font-size: 4.5rem;
-    border-bottom: 0.2rem solid var(--grey-color);
+  text-align: center;
+  font-size: 4.5rem;
+  border-bottom: 0.2rem solid var(--grey-color);
 }
 
 html {
-    font-size: 62.5%;
-    overflow-x: hidden;
+  font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
-    overflow-x: hidden;
-    padding-left: 25%;
-    background: var(--milky-color);
+  overflow-x: hidden;
+  padding-left: 25%;
+  background: var(--milky-color);
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 25%;
-    height: 100%;
-    background: var(--grey-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--grey-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 header .home img {
-    display: block;
-    width: 25rem;
-    height: 25rem;
-    object-fit: contain;
-    border-radius: 2rem;
+  display: block;
+  width: 25rem;
+  height: 25rem;
+  object-fit: contain;
+  border-radius: 2rem;
 }
 
 header .home p.post {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 header .home h3.project {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 header nav {width: 100%;}
 
 header nav ul li {
-    list-style: none;
-    font-size: 2rem;
-    background: #ccc;
-    margin: 1rem;
-    padding: 0.5rem;
-    border-radius: 2rem;
+  list-style: none;
+  font-size: 2rem;
+  background: #ccc;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
 }
 
 
@@ -180,73 +186,73 @@ header nav ul li {
 
 @media (max-width:1200px) {
 
-  html {font-size: 55%}
+html {font-size: 55%}
 
 }
 
 @media (max-width:992px) {
 
-  html {font-size: 52%}
-  
+html {font-size: 52%}
+
 }
 
 @media (max-width:768px) {
 
-  body {padding: 0}
-  
-  header {
-    position: relative;
-    width: 100%; height: auto;
-  }
+body {padding: 0}
 
-  header .home img {display: none; }
+header {
+  position: relative;
+  width: 100%; height: auto;
+}
 
-  header nav {width: auto;}
+header .home img {display: none; }
 
-  header nav ul {display: flex; }
+header nav {width: auto;}
 
-  header nav ul li {
-    list-style: none;
-    font-size: 2rem;
-    background: #ccc;
-    margin: 1rem;
-    padding: 0.5rem 2.5rem;
-    border-radius: 2rem;
-  }
+header nav ul {display: flex; }
+
+header nav ul li {
+  list-style: none;
+  font-size: 2rem;
+  background: #ccc;
+  margin: 1rem;
+  padding: 0.5rem 2.5rem;
+  border-radius: 2rem;
+}
 
 }
 
 @media (max-width:576px) {
 
-  .heading {font-size: 3.5rem; }
-  
-  .sensor .box-container .box {
-    width: 100%;
-    height: 10rem;
-    margin: 2rem;
-    font-size: 2rem;
-    border-radius: 3rem;
-  }
+.heading {font-size: 3.5rem; }
 
-  .control .box-container .row a img {
-    width: 12rem;
-    height: 12rem;
-  }
+.sensor .box-container .box {
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-radius: 3rem;
+}
 
-  .info .content p {font-size: 2rem;}
+.control .box-container .row a img {
+  width: 12rem;
+  height: 12rem;
+}
 
-  .info .member .box {
-    width: 100%;
-    position:relative;
-  }
+.info .content p {font-size: 2rem;}
 
-  .info .member .box img {
-    width: 20rem;
-    position: absolute;
-    top: -2rem; left:-2rem;
-  }
+.info .member .box {
+  width: 100%;
+  position:relative;
+}
 
-  .info .member .box .member-text {padding-left:17rem}
+.info .member .box img {
+  width: 20rem;
+  position: absolute;
+  top: -2rem; left:-2rem;
+}
+
+.info .member .box .member-text {padding-left:17rem}
 
 }
-     
+   

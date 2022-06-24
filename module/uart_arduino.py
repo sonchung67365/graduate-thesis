@@ -5,13 +5,13 @@ from time import sleep
 
 
 class Uart():
-    def __init__(self, port, baudrate, timeout=1.0):
+    def __init__(self):
         while True:
             try:
                 self.ser = serial.Serial(
-                    port,
-                    baudrate,
-                    timeout
+                    port='/dev/ttyACM0',
+                    baudrate=9600,
+                    timeout=1.0
                 )
                 print("Successfully connected to Serial.")
                 sleep(0.5)
@@ -38,29 +38,18 @@ class Uart():
 
 class Arduino(Uart):
     def __init__(self):
-        Uart.__init__(self,'/dev/ttyACM0',9600)
+        Uart.__init__(self)
     
     def get_data_merge(self):
-        if self.ser.in_waiting > 18:
+        while self.ser.in_waiting < 20:
             return Uart.get_data(self)
 
     def get_data_split(self):
-        return self.get_data_merge().split('_')
-
-    def get_data_humi(self):
-        return self.get_data_split()[0]
-
-    def get_data_temp(self):
-        return self.get_data_split()[1]
-
-    def get_data_lamp(self):
-        return self.get_data_split()[2]
-    
-    def get_data_vol(self):
-        return self.get_data_split()[3]
-
-    def get_data_distance(self):
-        return self.get_data_split()[4]
+        data = self.ser.readline().decode('utf-8').rstrip()
+        while len(data) < 20:
+            data = self.ser.readline().decode('utf-8').rstrip()
+        self.ser.reset_input_buffer()
+        return data
 
 
 
