@@ -3,6 +3,7 @@ from time import sleep
 
 
 
+
 class Uart():
     def __init__(self, port, baudrate, timeout=1.0):
         while True:
@@ -34,6 +35,7 @@ class Uart():
 
 
 
+
 class Arduino(Uart):
     def __init__(self):
         Uart.__init__(self,'/dev/ttyACM0',9600)
@@ -46,16 +48,19 @@ class Arduino(Uart):
         return self.get_data_merge().split('_')
 
     def get_data_humi(self):
-        return self.get_data_split[0]
+        return self.get_data_split()[0]
 
     def get_data_temp(self):
-        return self.get_data_split[1]
+        return self.get_data_split()[1]
 
     def get_data_lamp(self):
-        return self.get_data_split[1]
+        return self.get_data_split()[2]
     
     def get_data_vol(self):
-        return self.get_data_split[1]
+        return self.get_data_split()[3]
+
+    def get_data_distance(self):
+        return self.get_data_split()[4]
 
 
 
