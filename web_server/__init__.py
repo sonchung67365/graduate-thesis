@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 
 
+
+
+def check():
+    print("CHECK WEB_SERVER !")
+
+
 def create_app():
     app = Flask(__name__)
 
@@ -16,7 +22,7 @@ def create_app():
         return render_template('sensor.html', temp=temp, humi=humi)
 
     #control -----------------------------------------------------------------
-    from motor import check
+    from module import check
     check()
 
     @app.route('/control')

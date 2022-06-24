@@ -1,3 +1,6 @@
+def check():
+    print("CHECK MODULE !")
+
 '''
 import motor.l298 as L298
 
@@ -11,6 +14,5 @@ def create_motorrobot():
 
 '''
 
-def check():
-    print("Pass motor pkg")
+
 

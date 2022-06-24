@@ -1,3 +1,4 @@
+from tracemalloc import stop
 import RPiSim.GPIO as GPIO
 from time import sleep
 
@@ -7,6 +8,11 @@ HZ = 5000
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
+
+
+
+
+
 
 
 class Motor():
@@ -19,18 +25,31 @@ class Motor():
         self.in2_pwm = GPIO.PWM(self.in2, HZ)
         self.in1_pwm.start(0)
         self.in2_pwm.start(0)
+
     def moveF(self, speed=50, t=0):
         self.in1_pwm.ChangeDutyCycle(0)
         self.in2_pwm.ChangeDutyCycle(speed)
         sleep(t)
+
     def moveB(self, speed=50, t=0):
         self.in1_pwm.ChangeDutyCycle(speed)
         self.in2_pwm.ChangeDutyCycle(0)
         sleep(t)
+        
     def stop(self, t=0):
         self.in1_pwm.ChangeDutyCycle(0)
         self.in2_pwm.ChangeDutyCycle(0)
         sleep(t)
+        
+
+
+
+
+
+
+
+
+
 
 class MotorRobot():
     def __init__(self, in1=17, in2=27, in3=22, in4=23):
