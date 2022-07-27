@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from flask_basicauth import BasicAuth
 
 
 
@@ -9,6 +9,12 @@ def check():
 
 def create_app():
     app = Flask(__name__)
+
+    app.config['BASIC_AUTH_USERNAME'] = 'admin'
+    app.config['BASIC_AUTH_PASSWORD'] = 'admin'
+    app.config['BASIC_AUTH_FORCE'] = True
+
+    basic_auth = BasicAuth(app)
 
     @app.route('/')
     @app.route('/home')

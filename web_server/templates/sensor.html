@@ -12,6 +12,17 @@
 
     <div class="box-container">
 
+        <div class="box box-humi">
+            <b><big>độ ẩm</big></b>
+            <p class="value">
+                {% if humi %}
+                    {{ humi }}%
+                {% else %}
+                    Chưa có dữ liệu độ ẩm
+                {% endif %}
+            </p>
+        </div>
+
         <div class="box box-temp">
             <b><big>nhiệt độ</big></b>
             <p class="value">
@@ -23,13 +34,35 @@
             </p>
         </div>
 
-        <div class="box box-humi">
-            <b><big>độ ẩm</big></b>
+        <div class="box box-lamp">
+            <b><big>đèn</big></b>
             <p class="value">
-                {% if humi %}
-                    {{ humi }}%
+                {% if lamp %}
+                    Bật
                 {% else %}
-                    Chưa có dữ liệu độ ẩm
+                    Tắt
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="box box-pin">
+            <b><big>pin</big></b>
+            <p class="value">
+                {% if pin %}
+                    {{ pin }}%
+                {% else %}
+                    Chưa có dữ liệu pin
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="box box-distance">
+            <b><big>khoảng cách</big></b>
+            <p class="value">
+                {% if distance %}
+                    {{ distance }} cm
+                {% else %}
+                    Chưa có dữ liệu khoảng cách
                 {% endif %}
             </p>
         </div>

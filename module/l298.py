@@ -1,4 +1,3 @@
-from tracemalloc import stop
 import RPiSim.GPIO as GPIO
 from time import sleep
 
