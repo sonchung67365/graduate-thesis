@@ -147,5 +147,3 @@ update_frame()
 
 window.geometry('1000x440')
 window.mainloop()
-
-

@@ -1,7 +1,17 @@
+@import url(info.css);
+
+@import url(sensor.css);
+
+@import url(control.css);
+
+
+
+
 @font-face {
   font-family: wght;
   src: url(Nunito/Nunito-VariableFont_wght.ttf);
 }
+
 
 :root {
 --grey-color: #ddd;
@@ -9,7 +19,9 @@
 --red-color: #d03434;
 --yellow-color: #f4ea36;
 --blue-color: #368df4;
+--orange-color: #f6a90c;
 }
+
 
 * {
   font-family: wght;
@@ -24,82 +36,10 @@
   flex-wrap: wrap;
 }
 
-.info .member .box {
-  width: 22%;
-  height: auto;
-  box-sizing: border-box;
-  margin: 1rem;
-  font-size: 1.5rem;
-}
 
-.info .member {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.sensor .box-container .box {
-  box-sizing: border-box;
-  width: 30rem;
-  height: 20rem;
-  margin: 3rem;
-  font-size: 3rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 5rem;
-}
-
-.box.box-distance {background: #65c53a;}
-
-.box.box-pin {background: #3ac5ba;}
-
-.box.box-lamp {background: #c5973a;}
-
-.sensor .box-container .box-humi {
-  background: var(--blue-color);
-}
-
-.sensor .box-container .box-temp {
-  background: var(--yellow-color);
-}
-
-.sensor .box-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.control .box-container .row a img {
-  box-sizing: border-box;
-  width: 15rem;
-  height: 15rem;
-  object-fit: contain;
-  background: #ccc;
-  border-radius: 2rem;
-  margin: 0.5rem;
-  padding: 1rem;
-}
-
-.control .box-container .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.control .box-container {display: flex;flex-direction: column;justify-content: center;margin-top: 4rem;}
-
-.info .content p {
-  font-size: 1.7rem;
-}
 
 section {
   margin: 2rem;
-}
-
-.info .content {
-  margin: 1rem;
 }
 
 .heading span {
@@ -139,10 +79,11 @@ header {
 
 header .home img {
   display: block;
-  width: 25rem;
-  height: 25rem;
-  object-fit: contain;
+  width: 85%;
+  height: auto;
+  object-fit: cover;
   border-radius: 2rem;
+  margin: 0 2rem;
 }
 
 header .home p.post {
@@ -162,12 +103,6 @@ header nav ul li {
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 2rem;
-}
-
-.info .box-master {
-  width: 40%;
-  margin: 1rem auto;
-  font-size: 1.5rem;
 }
 
 
@@ -192,88 +127,44 @@ header nav ul li {
 
 @media (max-width:1200px) {
 
-html {font-size: 55%}
+  html {font-size: 55%}
 
 }
 
 @media (max-width:992px) {
 
-html {font-size: 52%}
+  html {font-size: 52%}
 
 }
 
 @media (max-width:768px) {
 
-body {padding: 0}
+  body {padding: 0}
 
-header {
-  position: relative;
-  width: 100%; height: auto;
-}
+  header {
+    position: relative;
+    width: 100%; height: auto;
+  }
 
-header .home img {display: none; }
+  header .home img {display: none; }
 
-header nav {width: auto;}
+  header nav {width: auto;}
 
-header nav ul {display: flex; }
+  header nav ul {display: flex; }
 
-header nav ul li {
-  list-style: none;
-  font-size: 2rem;
-  background: #ccc;
-  margin: 1rem;
-  padding: 0.5rem 2.5rem;
-  border-radius: 2rem;
-}
+  header nav ul li {
+    list-style: none;
+    font-size: 2rem;
+    background: #ccc;
+    margin: 1rem;
+    padding: 0.5rem 2.5rem;
+    border-radius: 2rem;
+  }
 
 }
 
 @media (max-width:576px) {
 
-.heading {font-size: 3.5rem; }
-
-.sensor .box-container .box {
-  width: 100%;
-  height: 10rem;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  border-radius: 3rem;
-}
-
-.control .box-container .row a img {
-  width: 12rem;
-  height: 12rem;
-}
-
-.info .content p {font-size: 2rem;}
-
-.info .member .box {
-  width: 100%;
-  position:relative;
-}
-
-.info .box-master {
-  width: 100%;
-  margin: 1rem;
-  position:relative;
-  padding: 2rem;
-  border-bottom: 0.2rem solid var(--grey-color);
-}
-
-.info .member .box img {
-  width: 20rem;
-  position: absolute;
-  top: -2rem; left:-2rem;
-}
-
-.info .box-master img {
-  width: 20rem;
-  position: absolute;
-  top: -2rem; left:-2rem;
-}
-
-.info .member .box .member-text {padding-left:17rem}
-
-.info .box-master .member-text {padding-left:17rem}
+  .heading {font-size: 3.5rem; }
 
 }
