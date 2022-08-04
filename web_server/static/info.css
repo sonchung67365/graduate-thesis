@@ -8,6 +8,7 @@
 .info .content {
     margin: 1rem;
     border-bottom: 0.2rem solid var(--grey-color);
+    padding-bottom: 1rem;
 }
 
 .info .content p {
@@ -21,7 +22,7 @@
     height: auto;
     box-sizing: border-box;
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
   }
   
 .info .member .box img {

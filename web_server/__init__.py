@@ -1,5 +1,7 @@
-from flask import Flask, render_template
+from turtle import distance
+from flask import Flask, render_template, jsonify
 from flask_basicauth import BasicAuth
+import random
 
 
 
@@ -21,11 +23,40 @@ def create_app():
     def index():
         return render_template('index.html')
 
+
+
+    # sensor update data -----------------------------------------------
+    
+    @app.route('/_data-sensor')
+    def data_sensor():
+        temp = random.randrange(1,40)
+        humi = random.randrange(1,50)
+        light = random.randrange(0,2)
+        if light == 0: lamp = "Tắt"
+        else : lamp = "Bật"
+        pin = random.randrange(1,100)
+        distance = random.randrange(1,500)
+        goods = random.randrange(0,2)
+        if goods == 0: hasgoods = "Có"
+        else : hasgoods = "Không"
+        return jsonify(
+            temp=temp,
+            humi=humi, 
+            lamp=lamp, 
+            pin=pin, 
+            distance=distance, 
+            hasgoods=hasgoods
+        )
+
     @app.route('/sensor')
     def sensor():
         temp = "lấy giá trị nhiệt độ" #thay bằng hàm lấy giá trị
         humi = "lấy giá trị độ ẩm" #thay bằng hàm lấy giá trị
-        return render_template('sensor.html', temp=temp, humi=humi)
+        lamp = "lấy giá trị độ ẩm" #thay bằng hàm lấy giá trị
+        pin = "lấy giá trị độ ẩm" #thay bằng hàm lấy giá trị
+        distance = "lấy giá trị độ ẩm" #thay bằng hàm lấy giá trị
+        hasgoods = "lấy giá trị độ ẩm" #thay bằng hàm lấy giá trị
+        return render_template('sensor.html', temp=temp, humi=humi, lamp=lamp, pin=pin, distance=distance, hasgoods=hasgoods)
 
     #control -----------------------------------------------------------------
     from module import check
