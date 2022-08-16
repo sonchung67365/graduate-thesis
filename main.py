@@ -8,8 +8,8 @@ from time import sleep
 
 
 
-host_name = "0.0.0.0"
-port = 5028
+host_name = "localhost"
+port = 8000
 
 app = create_app()
 
@@ -25,17 +25,5 @@ def gui():
 
 
 if __name__ == '__main__':
-    try:
-        #threading.Thread(target=gui, daemon=True).start()
-        app.run(host=host_name, port=port, debug=True, use_reloader=False)
-        #threading.Thread(target=lambda: app.run(host=host_name, port=port, debug=True, use_reloader=False)).start()
-
-        #f = open("data/test.txt", "r")
-    except:
-        print("Something went wrong")
-    else:
-        print("Nothing went wrong")
-        
-        #print(f.read())
-        while true:
-            sleep(1)
+    
+    app.run(host=host_name, port=port, debug=True)
